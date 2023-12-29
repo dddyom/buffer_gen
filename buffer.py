@@ -3,16 +3,13 @@ from dataclasses import dataclass
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.colors import LinearSegmentedColormap, Normalize
 from scipy.ndimage import gaussian_filter
 
 from target import Target
+from utils import CMAP
 
 WIDTH = 2048
 HEIGHT = 1200
-
-norm = Normalize(-1, 1)
-CMAP = LinearSegmentedColormap.from_list("", [[norm(-1.0), "0"], [norm(1.0), "yellow"]])  # black
 
 
 @dataclass

@@ -2,11 +2,9 @@ import random
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.colors import LinearSegmentedColormap, Normalize
 from scipy.ndimage import gaussian_filter
 
-norm = Normalize(-1, 1)
-CMAP = LinearSegmentedColormap.from_list("", [[norm(-1.0), "0"], [norm(1.0), "yellow"]])  # black
+from utils import CMAP
 
 
 class Target:
