@@ -5,8 +5,9 @@ from pathlib import Path
 from buffer import Buffer
 from target import Target
 
-DATASET_SIZE = 1
+DATASET_SIZE = 5000
 MAX_TARGETS_COUNT = 8
+SHOW_BUFFER = False
 
 
 class Dataaset:
@@ -25,7 +26,7 @@ class Dataaset:
                 b.place_target(t)
 
             # b.add_random_spots()
-            b.to_img(show=True, path=self.dataset_path / f"buffer_{i}.png")
+            b.to_img(show=SHOW_BUFFER, path=self.dataset_path / f"buffer_{i}.png")
 
             b.gen_coords_file(self.dataset_path / f"buffer_{i}.txt")
 
@@ -47,5 +48,5 @@ class Dataaset:
 
 
 if __name__ == "__main__":
-    d = Dataaset("/home/user/datasets")
+    d = Dataaset("/home/d/datasets")
     d.fill()
